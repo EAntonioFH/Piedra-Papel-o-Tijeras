@@ -1,5 +1,6 @@
 let imgselec = document.getElementsByClassName("Opciones");//Obtine los elementos de la clase Opciones (3 elementos)
 let seleccion = document.getElementById("Seleccionada");//Obtiene el elemento que se muestra cuando tu seleccionas una opción
+let Resultado = document.getElementById("Resultado");
 let Rival = document.getElementById("Rival");//Obtiene el elemento que muestra la opción elegida por la computadora
 let rutas = ["../Statics/img/piedra.png","../Statics/img/papel.png","../Statics/img/tijeras.png"];//Arreglo con las rutas de las imagenes
 let opciones = ["Piedra", "Papel", "Tijeras"];//Arreglo con los nombres de las imagenes/opciones
@@ -17,9 +18,9 @@ function elegir()
 
     //Se muestra si se ganó, se empató o se perdió
     if(seleccionado != opciones[aleatorio])
-        (opciones[pierdeCon] == seleccionado)? console.log("Ganaste") : console.log("Perdiste");
+        opciones[pierdeCon] == seleccionado? Resultado.setAttribute("src","../Statics/img/correcto.png") : Resultado.setAttribute("src","../Statics/img/incorrecto.png");
     else
-        console.log("Empate");
+        Resultado.setAttribute("src","../Statics/img/empate.png");
 }
 
 
